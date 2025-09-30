@@ -18,17 +18,43 @@
     <script src="Masonry.js"></script>
 </head>
 <body>
-    <main class="hero-container">
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Persistent Navigation Header -->
+    <nav id="navigationHeader" class="navigation-header" role="navigation" aria-label="Main navigation">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <img src="Cassie Camp Logo.png" alt="Cassie Campbell Logo" class="nav-logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="javascript:void(0)" onclick="scrollToTop()" class="nav-link">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('gallery-section')" class="nav-link">Writing</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('new-green-section')" class="nav-link">Speaking</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('coaching-section')" class="nav-link">Coaching</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('work-with-me-section')" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <main id="main-content" class="hero-container" role="main">
         <div class="hero-content">
             <header class="hero-header">
-                <p class="hero-subtitle">Cassie Campbell is the CEO and Founder of Arete.coach. Based in Los Angeles, she writes and speaks on her tech journey as a product executive, the new era of AI, and the power of coaching.</p>
+                <p class="hero-subtitle">Cassie Campbell turns product chaos into clarity for founders navigating the AI era. For 20 years, she's scaled startups from zero to $250M+ and created new product categories in fintech and insurtech that solved real problems for underserved markets. Now she's building Arete.coach, writing about the new era of product leadership, and helping teams navigate building in the age of AI.</p>
             </header>
             
             <div class="cta-buttons">
-                <button class="cta-button" onclick="handleSpeaking()">
+                <button class="cta-button" onclick="scrollToSection('new-green-section')" aria-label="Navigate to Speaking section">
                     <span>SPEAKING</span>
                 </button>
-                <button class="cta-button" onclick="handleCoaching()">
+                <button class="cta-button" onclick="scrollToSection('coaching-section')" aria-label="Navigate to Coaching section">
                     <span>COACHING</span>
                 </button>
             </div>
@@ -299,7 +325,7 @@
             </div>
             <div class="work-with-me-text">
                 <p class="work-with-me-description">
-                    Sometimes working together is better. I'd love to hear from you. Reach out on LinkedIn.
+                    Building something hard? You don't have to figure it out alone. Let's work together.
                 </p>
                 <div class="work-with-me-cta">
                     <a href="https://cass.cam/li" target="_blank" rel="noopener noreferrer" class="work-with-me-button">
@@ -328,15 +354,43 @@
     </section>
 
     <script>
-        // Placeholder functionality for CTA buttons
-        function handleSpeaking() {
-            console.log('Speaking button clicked');
-            // Placeholder for future speaking page navigation
+        // Smooth scroll functionality
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`.${sectionId}`);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
 
-        function handleCoaching() {
-            console.log('Coaching button clicked');
-            // Placeholder for future coaching page navigation
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button based on scroll position
+        function toggleBackToTopButton() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+
+        // Show/hide navigation header based on scroll position
+        function toggleNavigationHeader() {
+            const navHeader = document.getElementById('navigationHeader');
+            if (window.pageYOffset > 100) {
+                navHeader.classList.add('visible');
+            } else {
+                navHeader.classList.remove('visible');
+            }
         }
 
         // Typing Animation Implementation
@@ -424,6 +478,37 @@
                     loop: true
                 });
             }
+        });
+
+        // Add scroll event listeners for navigation and back to top
+        window.addEventListener('scroll', function() {
+            toggleBackToTopButton();
+            toggleNavigationHeader();
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Handle keyboard navigation for accessibility
+            if (e.key === 'Tab') {
+                // Ensure focus is visible on interactive elements
+                document.body.classList.add('keyboard-navigation');
+            }
+            
+            // Handle Enter and Space for button activation
+            if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('nav-link')) {
+                e.preventDefault();
+                e.target.click();
+            }
+            
+            // Handle Escape key to close any open modals or return focus
+            if (e.key === 'Escape') {
+                document.activeElement.blur();
+            }
+        });
+
+        // Remove keyboard navigation class on mouse use
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
         });
         
         // Testimonial Carousel Functionality
