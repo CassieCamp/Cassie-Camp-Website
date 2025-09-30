@@ -1,0 +1,249 @@
+/* LightGallery Custom Styles */
+.gallery-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    letter-spacing: 0.02em;
+}
+
+.speaking-description {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+    opacity: 0.9;
+}
+
+/* CSS-based Masonry Gallery */
+.masonry-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.masonry-item {
+    display: block;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    will-change: transform, box-shadow;
+}
+
+/* Assign masonry sizes based on orientation */
+.masonry-item.landscape {
+    grid-row-end: span 1; /* Short for landscape */
+}
+
+.masonry-item.portrait {
+    grid-row-end: span 3; /* Tall for portrait */
+}
+
+.masonry-item:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Focus on top-center to preserve faces */
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* For portrait/speaking photos, use different object positioning */
+.masonry-item:nth-child(2n) img,
+.masonry-item:nth-child(3n) img {
+    object-position: center 20%; /* Slightly higher focus for speaking photos */
+}
+
+/* For backstage/casual photos, use center positioning */
+.masonry-item:nth-child(5n) img {
+    object-position: center center;
+}
+
+/* Specific positioning classes for fine-tuning individual images */
+.masonry-item.focus-top img {
+    object-position: center top;
+}
+
+.masonry-item.focus-upper img {
+    object-position: center 25%;
+}
+
+.masonry-item.focus-center img {
+    object-position: center center;
+}
+
+.masonry-item.focus-lower img {
+    object-position: center 75%;
+}
+
+.masonry-item.focus-bottom img {
+    object-position: center bottom;
+}
+
+/* Alternative: Use object-fit: contain for images where faces are cut off */
+.masonry-item.preserve-aspect img {
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Portrait orientation styling */
+.masonry-item.portrait img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Landscape orientation styling */
+.masonry-item.landscape img {
+    object-fit: cover;
+    object-position: center center;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Add subtle overlay for better visual hierarchy */
+.masonry-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 16px;
+}
+
+.masonry-item:hover::after {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .masonry-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 0 1rem;
+        grid-auto-rows: 180px;
+    }
+    
+    /* On tablet, maintain orientation-based sizing */
+    .masonry-item.landscape {
+        grid-row-end: span 1;
+    }
+    
+    .masonry-item.portrait {
+        grid-row-end: span 2;
+    }
+    
+    .masonry-item {
+        border-radius: 12px;
+    }
+    
+    .masonry-item img {
+        border-radius: 12px;
+    }
+    
+    .masonry-item::after {
+        border-radius: 12px;
+    }
+    
+    .masonry-item:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-title {
+        font-size: 1.8rem;
+    }
+    
+    .masonry-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+        grid-auto-rows: 200px;
+    }
+    
+    .masonry-item {
+        border-radius: 8px;
+    }
+    
+    .masonry-item img {
+        border-radius: 8px;
+    }
+    
+    .masonry-item::after {
+        border-radius: 8px;
+    }
+    
+    .masonry-item:hover {
+        transform: translateY(-4px) scale(1.005);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .masonry-item:hover img {
+        transform: scale(1.04);
+    }
+    
+    /* On mobile, single column with orientation-based heights */
+    .masonry-item.landscape {
+        grid-row-end: span 1;
+    }
+    
+    .masonry-item.portrait {
+        grid-row-end: span 2;
+    }
+}
+
+/* Custom LightGallery theme adjustments */
+.lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lg-toolbar {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.lg-thumb-outer {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lg-thumb-item.active,
+.lg-thumb-item:hover {
+    border-color: #ffffff;
+}

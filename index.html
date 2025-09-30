@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassie Campbell - CEO & Founder | AI & Product Strategy Coach</title>
+    <meta name="description" content="Cassie Campbell, CEO & Founder of Arete.coach, Speaker & Host, AI & Product Strategy Coach">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CircularGallery.css">
+    <link rel="stylesheet" href="TiltedCard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.css">
+    <link rel="stylesheet" href="LightGallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="Masonry.js"></script>
+</head>
+<body>
+    <main class="hero-container">
+        <div class="hero-content">
+            <header class="hero-header">
+                <p class="hero-subtitle">Cassie Campbell is the CEO and Founder of Arete.coach. Based in Los Angeles, she writes and speaks on her tech journey as a product executive, the new era of AI, and the power of coaching.</p>
+            </header>
+            
+            <div class="cta-buttons">
+                <button class="cta-button" onclick="handleSpeaking()">
+                    <span>SPEAKING</span>
+                </button>
+                <button class="cta-button" onclick="handleCoaching()">
+                    <span>COACHING</span>
+                </button>
+            </div>
+            
+            <footer class="hero-footer">
+            </footer>
+        </div>
+    </main>
+    
+    <!-- Separate container for the vibe text below the orb -->
+    <section class="vibe-section">
+        <div class="typing-animation" id="typingText"></div>
+    </section>
+    
+    <!-- Circular Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2 class="gallery-title">
+                    <a href="https://athenaandjazz.substack.com/" target="_blank" rel="noopener noreferrer">
+                        Subscribe to my Substack - Athena & Jazz
+                    </a>
+                </h2>
+            </div>
+            <div id="circularGallery" class="circular-gallery"></div>
+        </div>
+    </section>
+    
+    <!-- Two-column container for podcast content -->
+    <section class="podcast-section">
+        <div class="podcast-container">
+            <div class="podcast-left">
+                <p class="podcast-text">
+                    Explore my podcast series:
+                    <a href="https://cass.cam/podplaylist" target="_blank" rel="noopener noreferrer" class="podcast-link">
+                        Demystifying Product Leadership Coaching.
+                    </a>
+                </p>
+            </div>
+            <div class="podcast-right">
+                <div id="tiltedCardContainer" class="tilted-card-container">
+                    <!-- TiltedCard will be initialized here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New container with green background -->
+    <section class="new-green-section">
+        <div class="new-green-content">
+            <h2 class="gallery-title">Speaking & MC Services</h2>
+            <p class="speaking-description">
+                I bring positivity, energy, and authenticity to every stage—backed by 20 years of lived experience scaling startups and leading teams in tech. I've walked the path your audience is on, which means I know how to ask the questions that matter and create conversations that resonate.
+                <br><br>
+                From my first keynote in 2019 to interviewing Waymo's co-CEO in front of 1000+ people at Women in Product Conference 2025, I love creating spaces where people navigating our evolving business world can engage with curiosity, humanity, and empathy—whether we're talking AI, product strategy, or leadership.
+                <br><br>
+                A founder recently told me, 'You reignited the soul of my startup.' Ready to bring that energy to your next event?
+            </p>
+            <div id="lightgallery" class="masonry-gallery">
+                <!-- Intermixed Landscape and Portrait Images -->
+                <a href="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" alt="WIP 2025" />
+                </a>
+                <a href="Speaking Gallery Images/2019 Product Summit Campbell - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/2019 Product Summit Campbell - Landscape.jpg" alt="2019 Product Summit Campbell" />
+                </a>
+                <a href="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" alt="Building Enterprise GenAI that Sticks" />
+                </a>
+                <a href="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" alt="2019 Product Summit Campbell 2" />
+                </a>
+                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" alt="Diversity in Product Panel - Campbell" />
+                </a>
+                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" alt="Diversity in Product Panel - Campbell" />
+                </a>
+                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" alt="Ethan Cole PMA LA 2019" />
+                </a>
+                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" alt="Ethan Cole PMA LA 2019" />
+                </a>
+                <a href="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" alt="Mic-ed up and getting pumped backstage" />
+                </a>
+                <a href="Speaking Gallery Images/PMA LA 2019- Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/PMA LA 2019- Landscape.jpg" alt="PMA LA 2019" />
+                </a>
+                <a href="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" alt="Pathway to Leadership Image" />
+                </a>
+                <a href="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" alt="Tekedra Mawakana and Cassie Campbell Fireside Chat" />
+                </a>
+                <a href="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" alt="Pathway to Leadership Image 2" />
+                </a>
+                <a href="Speaking Gallery Images/Women in Product 2019 - Portrait.png" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Women in Product 2019 - Portrait.png" alt="Women in Product 2019" />
+                </a>
+                <a href="Speaking Gallery Images/WIP Backstage Speakers Lounge - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/WIP Backstage Speakers Lounge - Landscape.jpg" alt="WIP Backstage Speakers Lounge" />
+                </a>
+                <a href="Speaking Gallery Images/Women in Product Banner - Deb Liu Negotiating Exec Compensation - Landscape.png" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Women in Product Banner - Deb Liu Negotiating Exec Compensation - Landscape.png" alt="Women in Product Banner - Deb Liu Negotiating Exec Compensation" />
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Coaching Section -->
+    <section class="coaching-section">
+        <div class="coaching-content">
+            <h2 class="coaching-title">Coaching</h2>
+            
+            <!-- Primary Offer - Founder Coaching -->
+            <div class="coaching-primary-offer">
+                <h3 class="coaching-primary-title">Helping Founders & First Product Leaders Build Market-Defining Products</h3>
+                <div class="coaching-primary-description">
+                    <p>I provide focused coaching for technical and business leaders who need deep product strategy expertise. Having led product at 4 startups (scaling from $0 to $250M+, including 2 SoftBank scale-ups), I help you on your path to pmf and to scale.</p>
+                    
+                    <p>Recent client impact includes Adam Braun (Clarasight CEO): "Cassie reignited the soul of my startup" and BetterUp's R&D team: "We made more progress in 2 weeks than the last 2 years."</p>
+                    
+                    <p>My approach pairs deep product expertise with a GM mindset, bridging product, sales, growth, and technology. I bring operational experience and direct feedback—not just coaching theory.</p>
+                </div>
+                
+                <div class="coaching-how-i-work">
+                    <h4 class="coaching-how-title">How I Work:</h4>
+                    <ul class="coaching-how-list">
+                        <li>Starting at $2500/mo</li>
+                        <li>1-hour sessions with follow-up summaries</li>
+                        <li>WhatsApp/email support between sessions</li>
+                        <li>Cancel anytime if we're not making progress</li>
+                    </ul>
+                    <p class="coaching-best-fit"><strong>Best Fit:</strong> Founders at crossroads who value outside perspective and are ready to move fast.</p>
+                </div>
+                
+                <div class="coaching-cta">
+                    <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Book a Discovery Call</a>
+                </div>
+            </div>
+            
+            <!-- Secondary Offers -->
+            <div class="coaching-secondary-offers">
+                <div class="coaching-secondary-offer">
+                    <h4 class="coaching-secondary-title">AI Product Development Mentor & Facilitator with SnapDev</h4>
+                    <p class="coaching-secondary-description">Teaching builders - tech and non-tech alike - to build AI-native products through hands-on mentoring and strategic facilitation on the SnapDev platform. Enroll in SnapCamp today!</p>
+                    <div class="coaching-cta">
+                        <a href="https://snapdev.ai" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Visit SnapDev.ai</a>
+                    </div>
+                </div>
+                
+                <div class="coaching-secondary-offer">
+                    <h4 class="coaching-secondary-title">Product Leadership Coaching for Product Managers</h4>
+                    <p class="coaching-secondary-description">Supporting startup product managers with strategic coaching, cross-functional alignment, and repeatable systems for growth. Focused on scaling product teams and processes effectively.</p>
+                    <div class="coaching-cta">
+                        <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Book a Discovery Call</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial Carousel Section -->
+            <div class="coaching-testimonials">
+                <div class="testimonial-layout">
+                    <!-- Video on the left -->
+                    <div class="testimonial-image-container">
+                        <video
+                            src="Coaching Corner Animated.mp4"
+                            class="coaching-corner-video"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            poster="Coaching Corner - Sold Out.jpg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <!-- Testimonials carousel on the right -->
+                    <div class="testimonial-carousel-container">
+                        <div class="testimonial-carousel" id="testimonialCarousel">
+                            <div class="testimonial-slide active">
+                                <blockquote class="testimonial-quote">
+                                    "Cassie reignited the soul of my startup"
+                                </blockquote>
+                                <cite class="testimonial-author">Adam Braun, CEO of Clarasight</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "We have made so much progress in the last 2 months compared to the last 2 years with Cassie's help."
+                                </blockquote>
+                                <cite class="testimonial-author">Devin Luquist, Vice President of Product at BetterUp</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "Cassie - just wanted to express excitement for the way you approach problems here... On one level, you're helping us solve stuff the tactical nitty gritty stuff. But on a different level (and I think more important) - examining our culture and mindsets that have led us into some of these issues in the first place. Which I think is way harder. I'm hopeful and excited that you're helping cultivate more actual craftspersonship and a healthier culture overall."
+                                </blockquote>
+                                <cite class="testimonial-author">Alex, Product Manager</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "You're somebody that's really used to working in a lot of ambiguity, somebody that's able to cross-cut through many different layers of the organization, somebody that's able to build relationships and build bridges, like somebody that is able to weave that together in narratives that people understand. Those are all things that I see day and and day out that you're incredibly good at. And so thank you."
+                                </blockquote>
+                                <cite class="testimonial-author">Erin, Enterprise Principal Product Designer</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "Cassie has an exceptional ability to connect with people and distill years of complex context into a clear and actionable path forward. She immersed herself in our deeply technical space, uncovering key insights and introducing frameworks that simplified our problem landscape. Her work brought alignment across senior VPs in product, engineering, and design, fostering clarity where there was ambiguity. Her impact has been both immediate and enduring."
+                                </blockquote>
+                                <cite class="testimonial-author">Hina Patel, Engineering Director at BetterUp</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "I really loved talking with you, learning from you and I always felt that the meeting will be elevated with you around. I have missed someone reminding us to keep on learning and that learning is ok and you have been exactly that force we needed here."
+                                </blockquote>
+                                <cite class="testimonial-author">Jane - Sr. Product Manager</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "Just wanted to drop you a quick line to say that many praises were shared about you & the grounding, encouraging, and up-leveling product force you've brought."
+                                </blockquote>
+                                <cite class="testimonial-author">Helen, Staff Product Manager</cite>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <blockquote class="testimonial-quote">
+                                    "Wow, I'm grateful to have gotten to work with you... You have really helped to improve Product at "Acme Co" and helped make my life better with the perspective and changes that you've brought"
+                                </blockquote>
+                                <cite class="testimonial-author">Larry, Senior Product Manager</cite>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel controls -->
+                        <div class="testimonial-controls">
+                            <button class="testimonial-prev" onclick="changeTestimonial(-1)">‹</button>
+                            <div class="testimonial-dots">
+                                <span class="testimonial-dot active" onclick="currentTestimonial(1)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(2)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(3)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(4)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(5)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(6)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(7)"></span>
+                                <span class="testimonial-dot" onclick="currentTestimonial(8)"></span>
+                            </div>
+                            <button class="testimonial-next" onclick="changeTestimonial(1)">›</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work With Me Section -->
+    <section class="work-with-me-section">
+        <div class="work-with-me-content">
+            <h2 class="work-with-me-title">Let's Work Together</h2>
+            <div class="work-with-me-image">
+                <img src="Kids working together.jpeg" alt="Kids working together to carry a surfboard" class="kids-image" />
+            </div>
+            <div class="work-with-me-text">
+                <p class="work-with-me-description">
+                    Sometimes working together is better. I'd love to hear from you. Reach out on LinkedIn.
+                </p>
+                <div class="work-with-me-cta">
+                    <a href="https://cass.cam/li" target="_blank" rel="noopener noreferrer" class="work-with-me-button">
+                        <svg class="linkedin-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New container with background color #b0c1b5 -->
+    <section class="new-container" style="background-color: #b0c1b5; padding: 60px 20px; min-height: 200px;">
+        <div class="new-container-content" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <!-- Content can be added here in the future -->
+        </div>
+    </section>
+    
+    <!-- Additional container below the gallery -->
+    <section class="bottom-section">
+        <div class="bottom-content">
+            <!-- Content can be added here in the future -->
+        </div>
+    </section>
+
+    <script>
+        // Placeholder functionality for CTA buttons
+        function handleSpeaking() {
+            console.log('Speaking button clicked');
+            // Placeholder for future speaking page navigation
+        }
+
+        function handleCoaching() {
+            console.log('Coaching button clicked');
+            // Placeholder for future coaching page navigation
+        }
+
+        // Typing Animation Implementation
+        class TypingAnimation {
+            constructor(element, text, options = {}) {
+                this.element = element;
+                this.text = text;
+                this.typingSpeed = options.typingSpeed || 50;
+                this.initialDelay = options.initialDelay || 1000;
+                this.pauseDuration = options.pauseDuration || 2000;
+                this.deletingSpeed = options.deletingSpeed || 30;
+                this.loop = options.loop !== false;
+                
+                this.displayedText = '';
+                this.currentCharIndex = 0;
+                this.isDeleting = false;
+                this.isVisible = false;
+                
+                this.init();
+            }
+            
+            init() {
+                // Start animation after initial delay
+                setTimeout(() => {
+                    this.isVisible = true;
+                    this.executeTypingAnimation();
+                }, this.initialDelay);
+            }
+            
+            executeTypingAnimation() {
+                if (this.isDeleting) {
+                    if (this.displayedText === '') {
+                        this.isDeleting = false;
+                        this.currentCharIndex = 0;
+                        if (!this.loop) return;
+                        
+                        setTimeout(() => {
+                            this.executeTypingAnimation();
+                        }, this.pauseDuration);
+                        return;
+                    }
+                    
+                    setTimeout(() => {
+                        this.displayedText = this.displayedText.slice(0, -1);
+                        this.element.textContent = this.displayedText;
+                        this.executeTypingAnimation();
+                    }, this.deletingSpeed);
+                } else {
+                    if (this.currentCharIndex < this.text.length) {
+                        setTimeout(() => {
+                            this.displayedText += this.text[this.currentCharIndex];
+                            this.element.textContent = this.displayedText;
+                            this.currentCharIndex++;
+                            this.executeTypingAnimation();
+                        }, this.getRandomSpeed());
+                    } else if (this.text.length > 1) {
+                        setTimeout(() => {
+                            this.isDeleting = true;
+                            this.executeTypingAnimation();
+                        }, this.pauseDuration);
+                    }
+                }
+            }
+            
+            getRandomSpeed() {
+                const min = Math.max(this.typingSpeed - 20, 10);
+                const max = this.typingSpeed + 20;
+                return Math.random() * (max - min) + min;
+            }
+        }
+
+        // Add smooth animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.classList.add('loaded');
+            
+            // Initialize typing animation
+            const typingElement = document.getElementById('typingText');
+            if (typingElement) {
+                new TypingAnimation(typingElement, 'Vibe coded in Los Angeles with 🖤', {
+                    typingSpeed: 80,
+                    initialDelay: 2000,
+                    pauseDuration: 3000,
+                    deletingSpeed: 40,
+                    loop: true
+                });
+            }
+        });
+        
+        // Testimonial Carousel Functionality
+        let currentTestimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showTestimonial(index) {
+            // Hide all testimonials
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current testimonial
+            if (testimonials[index]) {
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
+        }
+        
+        function changeTestimonial(direction) {
+            currentTestimonialIndex += direction;
+            
+            if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            } else if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            }
+            
+            showTestimonial(currentTestimonialIndex);
+        }
+        
+        function currentTestimonial(index) {
+            currentTestimonialIndex = index - 1;
+            showTestimonial(currentTestimonialIndex);
+        }
+        
+        // Auto-advance testimonials every 5 seconds
+        setInterval(() => {
+            changeTestimonial(1);
+        }, 5000);
+        
+        // Make functions global for onclick handlers
+        window.changeTestimonial = changeTestimonial;
+        window.currentTestimonial = currentTestimonial;
+    </script>
+    
+    <!-- Import and initialize CircularGallery -->
+    <script type="module">
+        import './CircularGallery.js';
+        
+        // Initialize the gallery after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryContainer = document.getElementById('circularGallery');
+            if (galleryContainer && window.CircularGalleryApp) {
+                // Initialize with custom settings
+                const gallery = new window.CircularGalleryApp(galleryContainer, {
+                    bend: 3,
+                    textColor: '#ffffff',
+                    borderRadius: 0.05,
+                    scrollEase: 0.02
+                });
+            }
+        });
+    </script>
+    
+    <!-- Import and initialize TiltedCard -->
+    <script src="TiltedCardVanilla.js"></script>
+    <script>
+        // Initialize the TiltedCard after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const tiltedCardContainer = document.getElementById('tiltedCardContainer');
+            if (tiltedCardContainer && window.TiltedCardVanilla) {
+                // Create overlay content with link
+                const overlayContent = `
+                    <a href="https://cass.cam/podplaylist" target="_blank" rel="noopener noreferrer"
+                       style="display: block; width: 100%; height: 100%; text-decoration: none;">
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+                                    background: rgba(0,0,0,0.3); border-radius: 15px; color: white; font-weight: bold;
+                                    font-size: 1.2rem; text-align: center; padding: 20px; box-sizing: border-box;">
+                            Watch Podcast
+                        </div>
+                    </a>
+                `;
+                
+                // Initialize with specified props
+                const tiltedCard = new window.TiltedCardVanilla(tiltedCardContainer, {
+                    imageSrc: 'Product Rising Square.jpg',
+                    altText: 'Product Rising Podcast',
+                    captionText: 'Product Rising Podcast',
+                    containerHeight: '300px',
+                    containerWidth: '300px',
+                    imageHeight: '300px',
+                    imageWidth: '300px',
+                    rotateAmplitude: 12,
+                    scaleOnHover: 1.2,
+                    showMobileWarning: false,
+                    showTooltip: true,
+                    displayOverlayContent: false,
+                    overlayContent: overlayContent
+                });
+            }
+        });
+    </script>
+    
+    <!-- Initialize LightGallery -->
+    <script>
+        // Initialize LightGallery after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryElement = document.getElementById('lightgallery');
+            if (galleryElement && window.lightGallery) {
+                lightGallery(galleryElement, {
+                    speed: 500,
+                    thumbnail: true,
+                    animateThumb: true,
+                    showThumbByDefault: false,
+                    thumbWidth: 100,
+                    thumbHeight: 80,
+                    thumbMargin: 5,
+                    appendThumbnailsTo: '.lg-outer',
+                    toggleThumb: true,
+                    enableThumbDrag: true,
+                    enableThumbSwipe: true,
+                    thumbSwipeThreshold: 10,
+                    loadYouTubeThumbnail: false,
+                    youTubeThumbSize: 1,
+                    animateThumb: true,
+                    currentPagerPosition: 'middle',
+                    thumbContHeight: 100,
+                    thumbActualSize: false,
+                    showThumbByDefault: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>
