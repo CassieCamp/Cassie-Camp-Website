@@ -97,17 +97,19 @@
 @media (max-width: 480px) {
   .gallery-section {
     padding: var(--spacing-md);
-    min-height: 500px;
-    overflow: hidden;
+    min-height: 650px;
+    overflow: visible;
   }
   
   .gallery-container {
-    height: 450px;
-    overflow: hidden;
+    min-height: 550px;
+    height: auto;
+    overflow: visible;
   }
   
   .circular-gallery {
-    height: 450px;
-    overflow: hidden;
+    min-height: 550px;
+    height: auto;
+    overflow: visible;
   }
 }
