@@ -98,18 +98,18 @@
   .gallery-section {
     padding: var(--spacing-md);
     min-height: 650px;
-    overflow: visible;
+    overflow: hidden;
   }
   
   .gallery-container {
     min-height: 550px;
     height: auto;
-    overflow: visible;
+    overflow: hidden;
   }
   
   .circular-gallery {
     min-height: 550px;
     height: auto;
-    overflow: visible;
+    overflow: hidden;
   }
 }
