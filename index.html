@@ -16,10 +16,27 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="Masonry.js"></script>
+    
+    <!-- Screen Reader Only Utility Class -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to content link for screen readers -->
+    <!-- Enhanced Skip Links for screen readers -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#resources-section" class="skip-link">Skip to resources</a>
+    <a href="#substack-articles-grid" class="skip-to-articles">Skip to articles</a>
     
     <!-- Persistent Navigation Header -->
     <nav id="navigationHeader" class="navigation-header" role="navigation" aria-label="Main navigation">
@@ -29,9 +46,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="javascript:void(0)" onclick="scrollToTop()" class="nav-link">Home</a></li>
-                <li><a href="javascript:void(0)" onclick="scrollToSection('gallery-section')" class="nav-link">Writing</a></li>
-                <li><a href="javascript:void(0)" onclick="scrollToSection('new-green-section')" class="nav-link">Speaking</a></li>
                 <li><a href="javascript:void(0)" onclick="scrollToSection('coaching-section')" class="nav-link">Coaching</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('resources-section')" class="nav-link">Resources</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('new-green-section')" class="nav-link">Speaking</a></li>
                 <li><a href="javascript:void(0)" onclick="scrollToSection('work-with-me-section')" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -44,164 +61,122 @@
         </svg>
     </button>
 
-    <main id="main-content" class="hero-container" role="main">
-        <div class="hero-content">
-            <header class="hero-header">
-                <p class="hero-subtitle">Cassie Campbell turns product chaos into clarity for founders navigating the AI era. For 20 years, she's scaled startups from zero to $250M+ and created new product categories in fintech and insurtech that solved real problems for underserved markets. Now she's building Arete.coach, writing about the new era of product leadership, and helping teams navigate building in the age of AI.</p>
-            </header>
-            
-            <div class="cta-buttons">
-                <button class="cta-button" onclick="scrollToSection('new-green-section')" aria-label="Navigate to Speaking section">
-                    <span>SPEAKING</span>
-                </button>
-                <button class="cta-button" onclick="scrollToSection('coaching-section')" aria-label="Navigate to Coaching section">
-                    <span>COACHING</span>
-                </button>
+    <!-- Ken Yarmosh-Style Scrollable Hero Sections -->
+    <main id="main-content" class="scrollable-hero-container" role="main">
+        
+        <!-- Hero Section 1: Hook - Turn Product Chaos Into Strategic Clarity -->
+        <section class="hero-section hero-hook" id="hero-hook">
+            <div class="hero-content">
+                <div class="hero-orb-background"></div>
+                <div class="hero-text-content">
+                    <h1 class="hero-main-title">Turn Product Chaos Into Strategic Clarity That Scales</h1>
+                    <p class="hero-subtitle">I'm the strategic sounding board for venture-funded founders who need to align product, sales, and operations—with AI-forward thinking that boards expect.</p>
+                    <div class="hero-linkedin-cta">
+                        <a href="https://cass.cam/li" target="_blank" rel="noopener noreferrer" class="work-with-me-button">
+                            <img src="InBug-White.png" alt="LinkedIn" class="linkedin-icon" width="22" height="22">
+                            Follow me on LinkedIn
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <footer class="hero-footer">
-            </footer>
-        </div>
+        </section>
+
+        <!-- Hero Section 2: Problem - Target Pain Points -->
+        <section class="hero-section hero-problem" id="hero-problem">
+            <div class="hero-content">
+                <div class="hero-text-content">
+                    <h2 class="hero-section-title">Are You Drowning in Product Decisions?</h2>
+                    <div class="problem-points">
+                        <div class="problem-point">
+                            <h3>CTOs Managing Product</h3>
+                            <p>You're brilliant at building, but product strategy feels like speaking a foreign language. Your board wants product-market fit metrics you've never tracked.</p>
+                        </div>
+                        <div class="problem-point">
+                            <h3>Sales Founders Needing Product Strategy</h3>
+                            <p>You can sell anything, but your product roadmap is a mess of feature requests. You need someone who speaks both sales and product fluently.</p>
+                        </div>
+                        <div class="problem-point">
+                            <h3>First-Time Head of Product</h3>
+                            <p>You've proven yourself in execution, but what got you here won't get you there. Work with someone who has experience leading teams, addressing strategy, execution, and culture, along with cross-functional collaboration and political alignment.</p>
+                        </div>
+                        <div class="problem-point">
+                            <h3>Venture-Funded Pressure</h3>
+                            <p>Your investors expect AI integration, scalable processes, and clear product vision. You're building fast but not sure you're building right.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section 3: Proof - SoftBank Experience & Results -->
+        <section class="hero-section hero-proof" id="hero-proof">
+            <div class="hero-content">
+                <div class="hero-text-content">
+                    <h2 class="hero-section-title">Proven Results at Scale</h2>
+                    <div class="proof-stats">
+                        <div class="proof-stat">
+                            <div class="stat-number">$250M+</div>
+                            <div class="stat-label">In startup scaling experience</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">SoftBank portfolio companies</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="stat-number">20</div>
+                            <div class="stat-label">Years of product leadership</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section 4: Action - Single Clear CTA -->
+        <section class="hero-section hero-action" id="hero-action">
+            <div class="hero-content">
+                <div class="hero-text-content">
+                    <h2 class="hero-section-title">Ready to Turn Chaos Into Clarity?</h2>
+                    <p class="hero-final-message">Stop guessing. Start scaling with confidence. Book a discovery call and let's align your product, sales, and operations for the growth your investors expect.</p>
+                    <div class="hero-cta-container">
+                        <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="hero-primary-cta">
+                            Book Discovery Call
+                        </a>
+                        <p class="cta-subtext">30-minute strategy session • No pitch, just value</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     
-    <!-- Separate container for the vibe text below the orb -->
-    <section class="vibe-section">
-        <div class="typing-animation" id="typingText"></div>
-    </section>
-    
-    <!-- Circular Gallery Section -->
-    <section class="gallery-section">
-        <div class="gallery-container">
-            <div class="gallery-header">
-                <h2 class="gallery-title">
-                    <a href="https://athenaandjazz.substack.com/" target="_blank" rel="noopener noreferrer">
-                        Subscribe to my Substack - Athena & Jazz
-                    </a>
-                </h2>
-            </div>
-            <div id="circularGallery" class="circular-gallery"></div>
-        </div>
-    </section>
-    
-    <!-- Two-column container for podcast content -->
-    <section class="podcast-section">
-        <div class="podcast-container">
-            <div class="podcast-left">
-                <p class="podcast-text">
-                    Explore my podcast series:
-                    <a href="https://cass.cam/podplaylist" target="_blank" rel="noopener noreferrer" class="podcast-link">
-                        Demystifying Product Leadership Coaching.
-                    </a>
-                </p>
-            </div>
-            <div class="podcast-right">
-                <div id="tiltedCardContainer" class="tilted-card-container">
-                    <!-- TiltedCard will be initialized here -->
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- New container with green background -->
-    <section class="new-green-section">
-        <div class="new-green-content">
-            <h2 class="gallery-title">Speaking & MC Services</h2>
-            <p class="speaking-description">
-                I bring positivity, energy, and authenticity to every stage—backed by 20 years of lived experience scaling startups and leading teams in tech. I've walked the path your audience is on, which means I know how to ask the questions that matter and create conversations that resonate.
-                <br><br>
-                From my first keynote in 2019 to interviewing Waymo's co-CEO in front of 1000+ people at Women in Product Conference 2025, I love creating spaces where people navigating our evolving business world can engage with curiosity, humanity, and empathy—whether we're talking AI, product strategy, or leadership.
-                <br><br>
-                A founder recently told me, 'You reignited the soul of my startup.' Ready to bring that energy to your next event?
-            </p>
-            <div id="lightgallery" class="masonry-gallery">
-                <!-- Intermixed Landscape and Portrait Images -->
-                <a href="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" alt="WIP 2025" />
-                </a>
-                <a href="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" alt="Building Enterprise GenAI that Sticks" />
-                </a>
-                <a href="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
-                    <img src="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" alt="2019 Product Summit Campbell 2" />
-                </a>
-                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" alt="Diversity in Product Panel - Campbell" />
-                </a>
-                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
-                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" alt="Diversity in Product Panel - Campbell" />
-                </a>
-                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" alt="Ethan Cole PMA LA 2019" />
-                </a>
-                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
-                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" alt="Ethan Cole PMA LA 2019" />
-                </a>
-                <a href="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" alt="Mic-ed up and getting pumped backstage" />
-                </a>
-                <a href="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" alt="Pathway to Leadership Image" />
-                </a>
-                <a href="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" data-lg-size="1200-800" class="masonry-item landscape">
-                    <img src="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" alt="Tekedra Mawakana and Cassie Campbell Fireside Chat" />
-                </a>
-                <a href="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" alt="Pathway to Leadership Image 2" />
-                </a>
-                <a href="Speaking Gallery Images/Women in Product 2019 - Portrait.png" data-lg-size="800-1200" class="masonry-item portrait">
-                    <img src="Speaking Gallery Images/Women in Product 2019 - Portrait.png" alt="Women in Product 2019" />
-                </a>
-            </div>
-        </div>
-    </section>
     
     <!-- Coaching Section -->
-    <section class="coaching-section">
+    <section class="coaching-section" id="coaching-section">
         <div class="coaching-content">
-            <h2 class="coaching-title">Coaching</h2>
-            
-            <!-- Primary Offer - Founder Coaching -->
+            <!-- Primary Offer - Founder Coaching with 2-column layout -->
             <div class="coaching-primary-offer">
-                <h3 class="coaching-primary-title">Helping Founders & First Product Leaders Build Market-Defining Products</h3>
-                <div class="coaching-primary-description">
-                    <p>I provide focused coaching and interim leadership for technical and business leaders who need deep product strategy expertise. Having led product at 4 startups (scaling from $0 to $250M+, including 2 SoftBank scale-ups), I help you on your path to pmf and to scale.</p>
+                <div class="coaching-left-column">
+                    <h3 class="coaching-primary-title">Strategic Product Leadership for Venture-Funded Founders</h3>
+                    <div class="coaching-primary-description">
+                        <p>My approach bridges brilliant technical execution with investor-ready product strategy. I bring 20 years of operational experience helping founders navigate the crossroads between building fast and building right.</p>
+                        
+                        <p>Whether you're a CTO managing product for the first time, a sales founder needing product strategy, or a first-time Head of Product scaling under venture pressure—I help you turn complexity into clarity that your team and board can rally behind.</p>
+                    </div>
                     
-                    <p>Recent client impact includes Adam Braun (Clarasight CEO): "Cassie reignited the soul of my startup" and BetterUp's R&D team: "We made more progress in 2 months than the last 2 years."</p>
-                    
-                    <p>My approach pairs deep product expertise with a GM mindset, bridging product, sales, growth, and technology. I bring operational experience and direct feedback—not just coaching theory.</p>
-                </div>
-                
-                <div class="coaching-how-i-work">
-                    <h4 class="coaching-how-title">How I Work:</h4>
-                    <ul class="coaching-how-list">
-                        <li>Starting at $2500/mo</li>
-                        <li>1-hour sessions with follow-up summaries</li>
-                        <li>WhatsApp/email support between sessions</li>
-                        <li>Cancel anytime if we're not making progress</li>
-                    </ul>
-                    <p class="coaching-best-fit"><strong>Best Fit:</strong> Founders at crossroads who value outside perspective and are ready to move fast.</p>
-                </div>
-                
-                <div class="coaching-cta">
-                    <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Book a Discovery Call</a>
-                </div>
-            </div>
-            
-            <!-- Secondary Offers -->
-            <div class="coaching-secondary-offers">
-                <div class="coaching-secondary-offer">
-                    <h4 class="coaching-secondary-title">AI Product Development Mentor & Facilitator with SnapDev</h4>
-                    <p class="coaching-secondary-description">Teaching builders - tech and non-tech alike - to build AI-native products through hands-on mentoring and strategic facilitation on the SnapDev platform. Enroll in SnapCamp today!</p>
                     <div class="coaching-cta">
-                        <a href="https://snapdev.ai" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Visit SnapDev.ai</a>
+                        <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Book Discovery Call</a>
                     </div>
                 </div>
                 
-                <div class="coaching-secondary-offer">
-                    <h4 class="coaching-secondary-title">Product Leadership Coaching for Product Managers</h4>
-                    <p class="coaching-secondary-description">Supporting startup product managers with strategic coaching, cross-functional alignment, and repeatable systems for growth. Focused on scaling product teams and processes effectively.</p>
-                    <div class="coaching-cta">
-                        <a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="coaching-cta-button">Book a Discovery Call</a>
+                <div class="coaching-right-column">
+                    <div class="coaching-how-i-work">
+                        <h4 class="coaching-how-title">How I Work:</h4>
+                        <ul class="coaching-how-list">
+                            <li>1-hour sessions with follow-up summaries</li>
+                            <li>WhatsApp/email support between sessions</li>
+                            <li>Cancel anytime if we're not making progress</li>
+                        </ul>
+                        <p class="coaching-best-fit"><strong>Best Fit:</strong> Founders at crossroads who value outside perspective and are ready to move fast.</p>
                     </div>
                 </div>
             </div>
@@ -301,8 +276,334 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
+    
+    <!-- Resources Section - Full Width Layout -->
+    <section class="resources-section" id="resources-section" aria-labelledby="resources-title">
+        <div class="resources-container">
+            <header class="resources-header">
+                <h2 id="resources-title" class="resources-title">Resources</h2>
+                <p class="resources-subtitle">Thought leadership content to help you navigate product strategy and leadership</p>
+            </header>
+            
+            <!-- Substack Section - Full Width -->
+            <section class="substack-full-section" aria-labelledby="substack-title">
+                <header class="substack-section-header">
+                    <div class="substack-header-content">
+                        <h3 id="substack-title" class="substack-section-title">Athena & Jazz - my Substack</h3>
+                        <p class="substack-section-description">Soulful takes on product leadership in the AI era.</p>
+                    </div>
+                </header>
+                
+                <!-- Structured Data for Articles -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Substack Articles by Cassie Campbell",
+                    "description": "Strategic insights for product leaders navigating AI, scaling, and venture pressure",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Cassie Campbell",
+                        "url": "https://athenaandjazz.substack.com/"
+                    },
+                    "itemListElement": [
+                        {
+                            "@type": "Article",
+                            "position": 1,
+                            "name": "Athena and Jazz - Why This Newsletter",
+                            "url": "https://athenaandjazz.substack.com/p/athena-and-jazz-why-this-newsletter",
+                            "image": "Athena and Jazz.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        },
+                        {
+                            "@type": "Article",
+                            "position": 2,
+                            "name": "My Cassandra Summer - 8 Predictions",
+                            "url": "https://athenaandjazz.substack.com/p/my-cassandra-summer-8-predictions",
+                            "image": "My Cassandra Summer.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        },
+                        {
+                            "@type": "Article",
+                            "position": 3,
+                            "name": "Reigniting the Builder Flame",
+                            "url": "https://athenaandjazz.substack.com/p/reigniting-the-builder-flame",
+                            "image": "Reigniting the Builder Flame.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        },
+                        {
+                            "@type": "Article",
+                            "position": 4,
+                            "name": "Coaching Corner Takeaways",
+                            "url": "https://athenaandjazz.substack.com/p/coaching-corner-takeaways",
+                            "image": "Coaching Corner Takeaways.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        },
+                        {
+                            "@type": "Article",
+                            "position": 5,
+                            "name": "The Future of Work",
+                            "url": "https://athenaandjazz.substack.com/p/the-future-of-work",
+                            "image": "The Future of Work.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        },
+                        {
+                            "@type": "Article",
+                            "position": 6,
+                            "name": "The Curse of Echo",
+                            "url": "https://athenaandjazz.substack.com/p/the-curse-of-echo",
+                            "image": "The Curse of Echo.jpg",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Cassie Campbell"
+                            }
+                        }
+                    ]
+                }
+                </script>
+
+                <!-- Enhanced Semantic Articles Grid with Accessibility Features -->
+                <section id="substack-articles-grid"
+                         class="substack-articles-grid"
+                         role="feed"
+                         aria-label="Recent Substack articles by Cassie Campbell"
+                         aria-describedby="substack-title"
+                         aria-live="polite"
+                         aria-busy="false">
+                    
+                    <!-- Article 1: Athena and Jazz -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/athena-and-jazz-why-this-newsletter"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: Athena and Jazz - Introduction to the newsletter"
+                           tabindex="0">
+                            <img src="Athena and Jazz.jpg"
+                                 alt="Athena and Jazz - Introduction to the Athena and Jazz newsletter exploring strategic product leadership insights by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                    
+                    <!-- Article 2: My Cassandra Summer -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/my-cassandra-summer-8-predictions"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: My Cassandra Summer - 8 predictions about the future"
+                           tabindex="0">
+                            <img src="My Cassandra Summer.jpg"
+                                 alt="My Cassandra Summer - 8 predictions about the future of product leadership and AI in business by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                    
+                    <!-- Article 3: Reigniting the Builder Flame -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/reigniting-the-builder-flame"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: Reigniting the Builder Flame - Rediscovering passion in product building"
+                           tabindex="0">
+                            <img src="Reigniting the Builder Flame.jpg"
+                                 alt="Reigniting the Builder Flame - How to rediscover passion and purpose in building products and leading teams by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                    
+                    <!-- Article 4: Coaching Corner Takeaways -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/coaching-corner-takeaways"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: Coaching Corner Takeaways - Key insights from coaching sessions"
+                           tabindex="0">
+                            <img src="Coaching Corner Takeaways.jpg"
+                                 alt="Coaching Corner Takeaways - Key insights and lessons learned from strategic product leadership coaching sessions by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                    
+                    <!-- Article 5: The Future of Work -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/the-future-of-work"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: The Future of Work - How AI is reshaping workplace and leadership"
+                           tabindex="0">
+                            <img src="The Future of Work.jpg"
+                                 alt="The Future of Work - Exploring how AI and technology are reshaping the workplace and leadership roles by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                    
+                    <!-- Article 6: The Curse of Echo -->
+                    <article class="substack-article"
+                             role="article"
+                             itemscope
+                             itemtype="https://schema.org/Article">
+                        <a href="https://athenaandjazz.substack.com/p/the-curse-of-echo"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="substack-article-link"
+                           aria-label="Read article: The Curse of Echo - Overcoming communication challenges in teams"
+                           tabindex="0">
+                            <img src="The Curse of Echo.jpg"
+                                 alt="The Curse of Echo - Understanding and overcoming communication echo chambers in product teams by Cassie Campbell"
+                                 class="substack-article-image"
+                                 loading="lazy"
+                                 itemprop="image" />
+                        </a>
+                    </article>
+                </section>
+            </section>
+            
+            <!-- Podcast Section - Detailed Two-Column Layout -->
+            <section class="podcast-full-section" aria-labelledby="podcast-title">
+                <header class="podcast-section-header">
+                    <div class="podcast-header-content">
+                        <h3 id="podcast-title" class="podcast-section-title">Product Rising Podcast: Demystifying Product Leadership Coaching</h3>
+                        <p class="podcast-section-description">Demystifying Product Leadership Coaching</p>
+                    </div>
+                </header>
+                
+                <div class="podcast-detailed-layout">
+                    <!-- Left Column: Content and Featured Guests -->
+                    <div class="podcast-left-column">
+                        <!-- Description with Featured Guests -->
+                        <div class="podcast-content-header">
+                            <p class="podcast-description">
+                                A 15-episode series exploring when to hire a coach, how coaching differs from training, and practical application of product concepts in different organizational contexts. Includes real stories from the field illustrating how product leadership coaches today support their clients.
+                            </p>
+                            <p class="podcast-description">
+                                <strong>Featured Guests:</strong>
+                            </p>
+                            <ul class="podcast-guests-list">
+                                <li>Marty Cagan (Silicon Valley Product Group)</li>
+                                <li>Teresa Torres (Product Talk)</li>
+                                <li>Hope Gurion (Fearless Product Leadership)</li>
+                                <li>Phyl Terry (Collaborative Gain)</li>
+                                <li>Vidya Dinamani & Heather Samarin (Product Rebels)</li>
+                                <li>Rob Snyder (Harvard Innovation Lab)</li>
+                                <li>Tim Herbig (Product Strategy & OKRs)</li>
+                                <li>Bosky Mukherjee (Product Leadership Coach)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Podcast Branding and Platform Links -->
+                    <div class="podcast-right-column">
+                        <div class="podcast-artwork-container">
+                            <img src="Product Rising Square.jpg"
+                                 alt="Product Rising Podcast cover art featuring microphone and product leadership themes"
+                                 class="podcast-artwork" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <!-- New container with green background -->
+    <section class="new-green-section">
+        <div class="new-green-content">
+            <h2 class="gallery-title">Speaking & MC Services</h2>
+            <p class="speaking-description">
+                I bring positivity, energy, and authenticity to every stage—backed by 20 years of lived experience scaling startups and leading teams in tech. I've walked the path your audience is on, which means I know how to ask the questions that matter and create conversations that resonate.
+                <br><br>
+                From my first keynote in 2019 to interviewing Waymo's co-CEO in front of 1000+ people at Women in Product Conference 2025, I love creating spaces where people navigating our evolving business world can engage with curiosity, humanity, and empathy—whether we're talking AI, product strategy, or leadership.
+                <br><br>
+                A founder recently told me, 'You reignited the soul of my startup.' Ready to bring that energy to your next event?
+            </p>
+            <div id="lightgallery" class="masonry-gallery">
+                <!-- Intermixed Landscape and Portrait Images -->
+                <a href="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/WIP 2025 - Portrait.jpeg" alt="WIP 2025" />
+                </a>
+                <a href="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Building Enterprise GenAI that Sticks - Portrait.jpg" alt="Building Enterprise GenAI that Sticks" />
+                </a>
+                <a href="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/2019 Product Summit Campbell 2 - Landscape.jpg" alt="2019 Product Summit Campbell 2" />
+                </a>
+                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Portrait.jpg" alt="Diversity in Product Panel - Campbell" />
+                </a>
+                <a href="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Diversity in Product Panel - Campbell - Landscape.jpg" alt="Diversity in Product Panel - Campbell" />
+                </a>
+                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Portrait.jpg" alt="Ethan Cole PMA LA 2019" />
+                </a>
+                <a href="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Ethan Cole PMA LA 2019 - Landscape.jpg" alt="Ethan Cole PMA LA 2019" />
+                </a>
+                <a href="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Mic-ed up and getting pumped backstage- Portrait.jpg" alt="Mic-ed up and getting pumped backstage" />
+                </a>
+                <a href="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Pathway to Leadership Image - Portrait.jpg" alt="Pathway to Leadership Image" />
+                </a>
+                <a href="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" data-lg-size="1200-800" class="masonry-item landscape">
+                    <img src="Speaking Gallery Images/Tekedra Mawakana and Cassie Campbell Fireside Chat - Landscape.jpeg" alt="Tekedra Mawakana and Cassie Campbell Fireside Chat" />
+                </a>
+                <a href="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Pathway to Leadership Image 2 - Portrait.jpg" alt="Pathway to Leadership Image 2" />
+                </a>
+                <a href="Speaking Gallery Images/Women in Product 2019 - Portrait.png" data-lg-size="800-1200" class="masonry-item portrait">
+                    <img src="Speaking Gallery Images/Women in Product 2019 - Portrait.png" alt="Women in Product 2019" />
+                </a>
+            </div>
+        </div>
+    </section>
+    
     
     <!-- Work With Me Section -->
     <section class="work-with-me-section">
@@ -346,9 +647,9 @@
                         <h3 class="footer-nav-title">Navigation</h3>
                         <ul class="footer-nav-list">
                             <li><a href="javascript:void(0)" onclick="scrollToTop()" class="footer-nav-link">Home</a></li>
-                            <li><a href="javascript:void(0)" onclick="scrollToSection('gallery-section')" class="footer-nav-link">Writing</a></li>
+                            <li><a href="javascript:void(0)" onclick="scrollToSection('coaching-section')" class="footer-nav-link">Strategic Coaching</a></li>
+                            <li><a href="javascript:void(0)" onclick="scrollToSection('resources-section')" class="footer-nav-link">Resources</a></li>
                             <li><a href="javascript:void(0)" onclick="scrollToSection('new-green-section')" class="footer-nav-link">Speaking</a></li>
-                            <li><a href="javascript:void(0)" onclick="scrollToSection('coaching-section')" class="footer-nav-link">Coaching</a></li>
                             <li><a href="javascript:void(0)" onclick="scrollToSection('work-with-me-section')" class="footer-nav-link">Contact</a></li>
                         </ul>
                     </div>
@@ -364,7 +665,7 @@
                         <h3 class="footer-nav-title">Connect</h3>
                         <ul class="footer-nav-list">
                             <li><a href="https://cass.cam/li" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn</a></li>
-                            <li><a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Book a Discovery Call</a></li>
+                            <li><a href="https://savvycal.com/casscam/product-strategy-session" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Book Discovery Call</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -419,92 +720,53 @@
             }
         }
 
-        // Typing Animation Implementation
-        class TypingAnimation {
-            constructor(element, text, options = {}) {
-                this.element = element;
-                this.text = text;
-                this.typingSpeed = options.typingSpeed || 50;
-                this.initialDelay = options.initialDelay || 1000;
-                this.pauseDuration = options.pauseDuration || 2000;
-                this.deletingSpeed = options.deletingSpeed || 30;
-                this.loop = options.loop !== false;
-                
-                this.displayedText = '';
-                this.currentCharIndex = 0;
-                this.isDeleting = false;
-                this.isVisible = false;
-                
-                this.init();
-            }
-            
-            init() {
-                // Start animation after initial delay
-                setTimeout(() => {
-                    this.isVisible = true;
-                    this.executeTypingAnimation();
-                }, this.initialDelay);
-            }
-            
-            executeTypingAnimation() {
-                if (this.isDeleting) {
-                    if (this.displayedText === '') {
-                        this.isDeleting = false;
-                        this.currentCharIndex = 0;
-                        if (!this.loop) return;
-                        
-                        setTimeout(() => {
-                            this.executeTypingAnimation();
-                        }, this.pauseDuration);
-                        return;
-                    }
-                    
-                    setTimeout(() => {
-                        this.displayedText = this.displayedText.slice(0, -1);
-                        this.element.textContent = this.displayedText;
-                        this.executeTypingAnimation();
-                    }, this.deletingSpeed);
-                } else {
-                    if (this.currentCharIndex < this.text.length) {
-                        setTimeout(() => {
-                            this.displayedText += this.text[this.currentCharIndex];
-                            this.element.textContent = this.displayedText;
-                            this.currentCharIndex++;
-                            this.executeTypingAnimation();
-                        }, this.getRandomSpeed());
-                    } else if (this.text.length > 1) {
-                        setTimeout(() => {
-                            this.isDeleting = true;
-                            this.executeTypingAnimation();
-                        }, this.pauseDuration);
-                    }
-                }
-            }
-            
-            getRandomSpeed() {
-                const min = Math.max(this.typingSpeed - 20, 10);
-                const max = this.typingSpeed + 20;
-                return Math.random() * (max - min) + min;
-            }
-        }
 
-        // Add smooth animations on load
+        // Add smooth animations on load and scroll reveal
         document.addEventListener('DOMContentLoaded', function() {
-            const heroContent = document.querySelector('.hero-content');
-            heroContent.classList.add('loaded');
             
-            // Initialize typing animation
-            const typingElement = document.getElementById('typingText');
-            if (typingElement) {
-                new TypingAnimation(typingElement, 'Vibe coded in Los Angeles with 🖤', {
-                    typingSpeed: 80,
-                    initialDelay: 2000,
-                    pauseDuration: 3000,
-                    deletingSpeed: 40,
-                    loop: true
-                });
-            }
+            // Initialize scroll reveal animations for hero sections
+            initializeScrollReveal();
         });
+
+        // Scroll Reveal Animation System
+        function initializeScrollReveal() {
+            const heroSections = document.querySelectorAll('.hero-section');
+            
+            // Reveal first section immediately
+            if (heroSections[0]) {
+                heroSections[0].classList.add('revealed');
+            }
+            
+            // Set up intersection observer for other sections
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '-50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        
+                        // Add staggered animations for child elements
+                        const animatedElements = entry.target.querySelectorAll('.problem-point, .proof-stat, .proof-quote');
+                        animatedElements.forEach((element, index) => {
+                            setTimeout(() => {
+                                element.style.opacity = '1';
+                                element.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all hero sections except the first one
+            heroSections.forEach((section, index) => {
+                if (index > 0) {
+                    observer.observe(section);
+                }
+            });
+        }
 
         // Add scroll event listeners for navigation and back to top
         window.addEventListener('scroll', function() {
@@ -589,51 +851,25 @@
         document.addEventListener('DOMContentLoaded', function() {
             const galleryContainer = document.getElementById('circularGallery');
             if (galleryContainer && window.CircularGalleryApp) {
-                // Initialize with custom settings
+                // Initialize with custom settings for clean design
                 const gallery = new window.CircularGalleryApp(galleryContainer, {
-                    bend: 3,
+                    bend: 2,
                     textColor: '#ffffff',
-                    borderRadius: 0.05,
-                    scrollEase: 0.02
+                    borderRadius: 0.08,
+                    scrollEase: 0.03
                 });
             }
         });
     </script>
     
-    <!-- Import and initialize TiltedCard -->
-    <script src="TiltedCardVanilla.js"></script>
+    <!-- Add click handler for podcast showcase -->
     <script>
-        // Initialize the TiltedCard after DOM is loaded
+        // Add click handler for podcast showcase
         document.addEventListener('DOMContentLoaded', function() {
-            const tiltedCardContainer = document.getElementById('tiltedCardContainer');
-            if (tiltedCardContainer && window.TiltedCardVanilla) {
-                // Create overlay content with link
-                const overlayContent = `
-                    <a href="https://cass.cam/podplaylist" target="_blank" rel="noopener noreferrer"
-                       style="display: block; width: 100%; height: 100%; text-decoration: none;">
-                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-                                    background: rgba(0,0,0,0.3); border-radius: 15px; color: white; font-weight: bold;
-                                    font-size: 1.2rem; text-align: center; padding: 20px; box-sizing: border-box;">
-                            Watch Podcast
-                        </div>
-                    </a>
-                `;
-                
-                // Initialize with specified props
-                const tiltedCard = new window.TiltedCardVanilla(tiltedCardContainer, {
-                    imageSrc: 'Product Rising Square.jpg',
-                    altText: 'Product Rising Podcast',
-                    captionText: 'Product Rising Podcast',
-                    containerHeight: '300px',
-                    containerWidth: '300px',
-                    imageHeight: '300px',
-                    imageWidth: '300px',
-                    rotateAmplitude: 12,
-                    scaleOnHover: 1.2,
-                    showMobileWarning: false,
-                    showTooltip: true,
-                    displayOverlayContent: false,
-                    overlayContent: overlayContent
+            const podcastShowcase = document.querySelector('.podcast-showcase');
+            if (podcastShowcase) {
+                podcastShowcase.addEventListener('click', function() {
+                    window.open('https://cass.cam/podplaylist', '_blank', 'noopener,noreferrer');
                 });
             }
         });
