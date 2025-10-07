@@ -854,7 +854,7 @@ body {
 
 /* Resources Section - Clean UX Design */
 .resources-section {
-    padding: var(--spacing-xxl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
     background-color: var(--off-white);
 }
 
@@ -1226,7 +1226,7 @@ body {
 }
 
 .podcast-guests-list {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     line-height: 1.6;
     color: var(--text-secondary);
     margin: 0;
@@ -1462,7 +1462,7 @@ body {
 
 /* New Green Section - Container with #7d9b76 background */
 .new-green-section {
-    padding: var(--spacing-xxl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
     background-color: #7d9b76;
     display: flex;
     justify-content: center;
