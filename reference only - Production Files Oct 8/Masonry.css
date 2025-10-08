@@ -1,0 +1,84 @@
+.list {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.item-wrapper {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    will-change: transform, opacity;
+}
+
+.item-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.item-wrapper:hover .item-img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5));
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .item-img {
+        border-radius: 6px;
+    }
+    
+    .color-overlay {
+        border-radius: 6px;
+    }
+}
+
+@media (min-width: 600px) {
+    .item-img {
+        border-radius: 10px;
+    }
+    
+    .color-overlay {
+        border-radius: 10px;
+    }
+}
+
+/* Loading state */
+.list.loading .item-wrapper {
+    opacity: 0;
+}
+
+/* Animation classes for GSAP */
+.item-wrapper[data-animate="true"] {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Ensure proper stacking */
+.item-wrapper {
+    z-index: 1;
+}
+
+.item-wrapper:hover {
+    z-index: 2;
+}

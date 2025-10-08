@@ -120,6 +120,11 @@ body {
     overflow-x: hidden;
 }
 
+/* Scroll padding to account for fixed navigation header */
+html {
+    scroll-padding-top: 80px;
+}
+
 /* Navigation Header */
 .navigation-header {
     position: fixed;
@@ -710,7 +715,281 @@ body {
     z-index: 3;
 }
 
+/* What Makes Me Different Section - Timeline Layout */
+.differentiators-section {
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+    position: relative;
+    overflow: hidden;
+}
 
+.differentiators-container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.differentiators-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.differentiators-title {
+    font-family: var(--serif-font);
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.differentiators-subtitle {
+    font-family: var(--serif-font);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: var(--font-weight-light);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Timeline Container - Divorce.com Style */
+.timeline-container {
+    position: relative;
+    margin-top: var(--spacing-xxl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Timeline Vertical Line - Left Side */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-green);
+    border-radius: 2px;
+}
+
+/* Timeline Item - Simple Row Layout */
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--spacing-xxl);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Icon - Always on Left */
+.timeline-icon {
+    position: relative;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    background: var(--primary-green);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(45, 90, 61, 0.2);
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.timeline-icon svg {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--transition-normal);
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(45, 90, 61, 0.3);
+}
+
+/* Timeline Content - Always on Right */
+.timeline-content {
+    flex: 1;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 4px rgba(45, 90, 61, 0.08);
+    border: 1px solid rgba(45, 90, 61, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.timeline-content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(45, 90, 61, 0.12);
+    border-color: rgba(45, 90, 61, 0.15);
+}
+
+.timeline-title {
+    font-family: var(--serif-font);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+.timeline-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Staggered animation on scroll reveal */
+.timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.differentiators-section.revealed .timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.differentiators-section.revealed .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.differentiators-section.revealed .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.differentiators-section.revealed .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Responsive Design for Timeline - Divorce.com Style */
+@media (max-width: 1024px) {
+    .timeline-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .timeline-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .timeline-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .timeline-title {
+        font-size: 1.3rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .timeline-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .differentiators-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .differentiators-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .differentiators-title {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .differentiators-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+    
+    /* Mobile Timeline - Keep Simple Layout */
+    .timeline-container::before {
+        left: 24px;
+    }
+    
+    .timeline-item {
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .timeline-icon {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    
+    .timeline-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-content {
+        flex: 1;
+        padding: var(--spacing-lg);
+    }
+    
+    .timeline-title {
+        font-size: 1.25rem;
+    }
+    
+    .timeline-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .differentiators-section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .timeline-item {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .timeline-content {
+        padding: var(--spacing-md);
+    }
+    
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .timeline-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .timeline-title {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .timeline-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .timeline-container::before {
+        left: 20px;
+    }
+}
 
 /* Site Footer */
 .site-footer {
@@ -1501,11 +1780,31 @@ body {
 
 .coaching-title {
     font-family: var(--serif-font);
-    font-size: 2.5rem;
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
     font-weight: var(--font-weight-semibold);
     color: var(--text-primary);
-    margin-bottom: var(--spacing-xl);
-    letter-spacing: 0.02em;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.coaching-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coaching-subtitle {
+    font-family: var(--serif-font);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: var(--font-weight-light);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Coaching Corner Image */
@@ -1528,98 +1827,6 @@ body {
     transform: translateY(-4px);
 }
 
-/* Primary Offer - Founder Coaching */
-.coaching-primary-offer {
-    background: linear-gradient(135deg, var(--light-green) 0%, var(--sage-green) 100%);
-    padding: var(--spacing-xxl);
-    border-radius: var(--radius-xl);
-    margin-bottom: var(--spacing-xl);
-    box-shadow: var(--shadow-lg);
-    color: var(--white);
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: var(--spacing-xxl);
-    align-items: start;
-}
-
-.coaching-left-column {
-    text-align: left;
-}
-
-.coaching-right-column {
-    text-align: left;
-}
-
-.coaching-primary-title {
-    font-family: var(--serif-font);
-    font-size: 2rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--forest-green);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-    line-height: 1.3;
-}
-
-.coaching-primary-description {
-    margin-bottom: var(--spacing-lg);
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.coaching-primary-description p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    margin-bottom: var(--spacing-md);
-    color: var(--forest-green);
-}
-
-.coaching-how-i-work {
-    background: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    backdrop-filter: blur(10px);
-    height: fit-content;
-}
-
-.coaching-how-title {
-    font-family: var(--serif-font);
-    font-size: 1.4rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--forest-green);
-    margin-bottom: var(--spacing-md);
-}
-
-.coaching-how-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--spacing-md);
-}
-
-.coaching-how-list li {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: var(--spacing-xs);
-    color: var(--forest-green);
-    position: relative;
-    padding-left: var(--spacing-lg);
-}
-
-.coaching-how-list li::before {
-    content: '•';
-    color: var(--forest-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-.coaching-best-fit {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--forest-green);
-    margin: 0;
-    font-style: italic;
-}
 
 /* Secondary Offers */
 .coaching-secondary-offers {
@@ -2254,8 +2461,8 @@ body {
     
     /* Coaching section tablet styles */
     .coaching-title {
-        font-size: 2rem;
-        margin-bottom: var(--spacing-lg);
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        margin-bottom: var(--spacing-md);
     }
     
     .coaching-corner-image {
@@ -2266,20 +2473,6 @@ body {
         max-width: 300px;
     }
     
-    .coaching-primary-offer {
-        padding: var(--spacing-xl);
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .coaching-primary-title {
-        font-size: 1.7rem;
-    }
-    
-    .coaching-left-column,
-    .coaching-right-column {
-        text-align: center;
-    }
     
     .coaching-secondary-offers {
         grid-template-columns: 1fr;
@@ -2638,8 +2831,8 @@ body {
     }
     
     .coaching-title {
-        font-size: 1.8rem;
-        margin-bottom: var(--spacing-lg);
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        margin-bottom: var(--spacing-md);
     }
     
     .coaching-corner-image {
@@ -2650,33 +2843,6 @@ body {
         max-width: 250px;
     }
     
-    .coaching-primary-offer {
-        padding: var(--spacing-lg);
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    .coaching-left-column,
-    .coaching-right-column {
-        text-align: center;
-    }
-    
-    .coaching-primary-title {
-        font-size: 1.5rem;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .coaching-primary-description p {
-        font-size: 1rem;
-    }
-    
-    .coaching-how-i-work {
-        padding: var(--spacing-md);
-    }
-    
-    .coaching-how-title {
-        font-size: 1.2rem;
-    }
     
     .coaching-secondary-offers {
         grid-template-columns: 1fr;
